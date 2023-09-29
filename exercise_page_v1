@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Fitness Homepage</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<style>
+	body, h1, p, ul, li, button {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: radial-gradient (circle,#FFEEAA,#2F4F4F); /* for Background */
+    line-height: 1.6;
+    color: #000000; /* black text */
+}
+
+header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+    background-color: #008000; 
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+}
+header::after {
+    content: ""; /* Necessary for the pseudo-element to work */
+    display: block;
+    height: 3px; /* Thickness of the bar; adjust as you like */
+    background-color: #003A00; /* color of the bar; adjust as needed */
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0; 
+}
+
+
+#logo-gym-title {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(90deg, #008000, #006400);
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 1px solid linear-gradient(90deg, #008000, #004F00);
+    margin-right: 20px;
+    margin-left: 0px;
+}
+
+#logo-gym-title img {
+    height: 100px;
+    width: auto;
+    margin-right: 10px; 
+}
+
+#gym-title {
+    font-family: 'Arial Black', sans-serif;
+    font-size: 34px;
+    font-weight: bold;
+    color: #000000;
+    text-transform: uppercase;
+    text-shadow: 4px 4px 8px rgba(0,0,0,0.5);
+    letter-spacing: 2.5px;
+    margin: 0; /* removed margin to ensure the title is aligned with the logo */
+}
+
+nav ul {
+    display: flex;
+    gap: 5px;
+    list-style-type: none;
+}
+
+nav li a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    padding: 10px; /* padding around the icon */
+    border-radius: 15px; /* for a more rounded appear */
+    transition: background-color 0.2s;
+    background-color: #008000; /* Darker shade for navigation buttons */
+    display: flex; /* Added to center the icon within the box */
+    align-items: center; /* Vertically center the icon */
+    justify-content: center; /* Horizontally center the icon */
+}
+
+nav li a i {
+    font-size: 25px; /* Adjust per preference */
+    vertical-align: middle; 
+}
+
+nav li a img {
+    height: 50px;  /* Increased */
+    width: 30px;   /* Increased  */
+    margin-right: 8px;  
+    vertical-align: middle;  
+}
+
+nav li a:hover {
+    background-color: #006400; /* Darker green for hover effects */
+    box-shadow: 0px 1px 2px rgba(0,0,0,0.2);
+    transform: translateY(1px);
+}
+
+
+
+
+main {
+    padding: 20px 5%; 
+    background: url("https://images.unsplash.com/photo-1502904550040-7534597429ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80") no-repeat;
+}
+
+#exercise-page-heading {
+    text-align: center;
+    padding: 15px 25px; /* Increase padding for prominence */
+    border: none;
+    border-radius: 10px; /* Rounded edges for consistency */
+    background-color: #008000; /* Green to match the theme */
+    color:  #000000; 
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.2); /* subtle shadow for depth */
+}
+
+#featured-heading {
+    font-size: 30px;
+    background-color: #008000; /* Green to match the theme */
+    border-radius: 10px; /* Rounded edges for consistency */
+    width: 200px;
+    border: 20px;
+    text-align: center;
+    margin: 20px auto;
+    
+}
+
+.grid-container-featured {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 30px;
+}
+
+.grid-item {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #008000;
+    border-radius: 15px;
+    font-size: 18px;
+    transition: background-color 0.5s ease;
+    position: relative;
+    border: none;
+    background: no-repeat center center / cover;
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s; /* For a subtle zoom effect on hover */
+ 
+}
+
+#recent-heading {
+    font-size: 30px;
+    background-color: #008000; /* Green to match the theme */
+    border-radius: 10px; /* Rounded edges for consistency */
+    width: 400px;
+    border: 20px;
+    text-align: center;
+    margin: 20px auto;
+    
+}
+
+.grid-container-recent {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-gap: 30px;
+}
+button {
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #008000;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: -1px 1px 0 #000;
+    color: white;
+    position: relative;
+    border: none;
+    background: no-repeat center center / cover;
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s; /* For a subtle zoom effect on hover */
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+ 
+	
+	
+	</style>
+  </head>
+
+  <body>
+    <!-- Header Section -->
+    <header>
+<div id="logo-gym-title">
+        <img src="https://cdn.discordapp.com/attachments/1146503746738716676/1156296862542868480/Simple_Fitness.png?ex=651474de&is=6513235e&hm=68a6fe88011d989427c84132a88bb7b6b2d65f1218c467aef18bbaa420519919&" alt="Simple Fitness Logo" >
+        <span id="gym-title">Simple Fitness</span>
+    </div>
+      
+
+      <!-- Navigation Bar -->
+      <nav>
+        <ul>
+          <li><a href="#"><i class="fas fa-home"></i></a></li>
+          <li><a href="#"><i class="fa-solid fa-dumbbell"></i></a></li>
+          <li><a href="#"><i class="fa-solid fa-medal"></i></a></li>
+          <li><a href="#"><i class="fa-solid fa-book"></i></a></li>
+          <li><a href="#"><i class="fas fa-user"></i></a></li>
+
+        </ul>
+      </nav>
+
+    </header>
+
+
+    <!-- Main Content Area -->
+    <main>
+    <div class="backgroundimage">
+    <!--Main Exercise Heading -->
+    <h1 id="exercise-page-heading">
+    Exercises
+    </h1>
+    
+    <!-- Featured Exerices Section -->
+   <h2 id="featured-heading">
+   Featured
+   </h2>
+   
+   <div class="grid-container-featured">
+      <button style="background-image: url('https://media.npr.org/assets/img/2017/07/26/istock-636342222-dfdae3ccda7619165d470f319c927a74b7e627d9-s1100-c50.jpg');">
+      Running
+      </button>
+      <button style="background-image: url('https://cdn.pixabay.com/photo/2020/12/09/21/11/stairs-5818603_1280.jpg');">
+      Stairs
+      </button>
+      <button style="background-image: url('https://cdn.pixabay.com/photo/2019/11/05/16/55/pushups-4603956_1280.jpg');">
+      Pushups
+      </button>
+      <button style="background-image: url('https://cdn.pixabay.com/photo/2019/10/18/15/02/remove-4559344_1280.jpg');">
+      Squats
+      </button>
+      <button style="background-image: url('https://cdn.pixabay.com/photo/2021/01/25/08/25/man-5947630_1280.jpg');">
+      Sit-Ups
+      </button>
+      <button style="background-image: url('https://cdn.pixabay.com/photo/2015/07/02/10/23/training-828744_1280.jpg');">
+      Pullups
+      </button>
+</div>
+     
+     <h2 id="recent-heading">
+     Exercises Done Recently
+     </h2>
+
+  <div class="grid-container-recent">
+      <button style="background-image: url('https://cdn.pixabay.com/photo/2015/07/02/10/23/training-828744_1280.jpg');">
+      Pullups
+      </button>
+      <button style="background-image: url('https://cdn.pixabay.com/photo/2019/11/05/16/55/pushups-4603956_1280.jpg');">
+      Pushups
+      </button>
+      <button style="background-image: url('https://cdn.pixabay.com/photo/2019/10/18/15/02/remove-4559344_1280.jpg');">
+      Squats
+      </button>
+ </div>
+    </main>
+  </body>
+
+</html>
