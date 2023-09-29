@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Fitness Homepage</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+  body, h1, p, ul, li, button {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: #2F4F4F; /* for Background */
+    line-height: 1.6;
+    color: #000000; /* black text */
+}
+
+header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+    background-color: #008000; 
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+}
+header::after {
+    content: ""; /* Necessary for the pseudo-element to work */
+    display: block;
+    height: 3px; /* Thickness of the bar; adjust as you like */
+    background-color: #003A00; /* color of the bar; adjust as needed */
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0; 
+}
+
+
+#logo-gym-title {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(90deg, #008000, #006400);
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 1px solid linear-gradient(90deg, #008000, #004F00);
+    margin-right: 20px;
+    margin-left: 0px;
+}
+
+#logo-gym-title img {
+    height: 100px;
+    width: auto;
+    margin-right: 10px; 
+}
+
+#gym-title {
+    font-family: 'Arial Black', sans-serif;
+    font-size: 34px;
+    font-weight: bold;
+    color: #000000;
+    text-transform: uppercase;
+    text-shadow: 4px 4px 8px rgba(0,0,0,0.5);
+    letter-spacing: 2.5px;
+    margin: 0; /* removed margin to ensure the title is aligned with the logo */
+}
+
+nav ul {
+    display: flex;
+    gap: 5px;
+    list-style-type: none;
+}
+
+nav li a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    padding: 10px; /* padding around the icon */
+    border-radius: 15px; /* for a more rounded appear */
+    transition: background-color 0.2s;
+    background-color: #008000; /* Darker shade for navigation buttons */
+    display: flex; /* Added to center the icon within the box */
+    align-items: center; /* Vertically center the icon */
+    justify-content: center; /* Horizontally center the icon */
+}
+
+nav li a i {
+    font-size: 25px; /* Adjust per preference */
+    vertical-align: middle; 
+}
+
+nav li a img {
+    height: 50px;  /* Increased */
+    width: 30px;   /* Increased  */
+    margin-right: 8px;  
+    vertical-align: middle;  
+}
+
+nav li a:hover {
+    background-color: #006400; /* Darker green for hover effects */
+    box-shadow: 0px 1px 2px rgba(0,0,0,0.2);
+    transform: translateY(1px);
+}
+
+
+
+
+main {
+    padding: 20px 5%; 
+    background-color: #4F6F4F; /* Lighter grayish-green shade */
+}
+
+#cta-prompt {
+    text-align: center;
+    margin-top: 20px;
+    background: #4F6F4F;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.2); /* subtle shadow for depth */
+}
+
+#cta-prompt p {
+    font-size: 24px;  /* Increased font size for emphasis */
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #000000;
+}
+
+button {
+    padding: 15px 25px; /* Increase padding for prominence */
+    border: none;
+    border-radius: 10px; /* Rounded edges for consistency */
+    font-size: 18px;  /* Slightly larger font size */
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.2s, transform 0.2s;
+    background-color: #008000; /* Green to match the theme */
+    color:  #000000; 
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.2); /* subtle shadow for depth */
+}
+
+button:hover {
+    background-color: #006400; 
+    transform: translateY(-2px); /* subtle lift effect on hover */
+}
+
+#welcome-banner {
+    position: relative;
+    margin: 20px 0; /* Added space around the banner */
+    border-radius: 20px; /* Rounded corners for the banner */
+    overflow: hidden; /* To ensure image corners match the container's rounded corners */
+}
+
+#welcome-banner img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s; /* For a subtle zoom effect on hover */
+}
+
+#welcome-banner:hover img {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+  </style>
+  </head>
+
+  <body>
+    <!-- Header Section -->
+    <header>
+      <div id="logo-gym-title">
+        <img src="https://cdn.discordapp.com/attachments/1146503746738716676/1156296862542868480/Simple_Fitness.png?ex=651474de&is=6513235e&hm=68a6fe88011d989427c84132a88bb7b6b2d65f1218c467aef18bbaa420519919&" alt="Simple Fitness Logo">
+        <span id="gym-title">Simple Fitness</span>
+      </div>
+
+
+      <!-- Navigation Bar -->
+      <nav>
+        <ul>
+          <li><a href="#"><i class="fas fa-home"></i></a></li>
+          <li><a href="#"><i class="fa-solid fa-dumbbell"></i></a></li>
+          <li><a href="#"><i class="fa-solid fa-medal"></i></a></li>
+          <li><a href="#"><i class="fa-solid fa-book"></i></a></li>
+          <li><a href="#"><i class="fas fa-user"></i></a></li>
+
+        </ul>
+      </nav>
+
+    </header>
+
+
+    <!-- Main Content Area -->
+    <main>
+      <!-- Call to Action Prompt -->
+      <!--    <section id="cta-prompt">
+        <p>Welcome to Simple Fitness! Ready to kickstart your journey?</p>
+        <button>Sign Up Now!</button>
+      </section> -->
+
+      <!-- Welcome Banner with Slogan -->
+      <section id="welcome-banner">
+        <!-- <img src="https://t4.ftcdn.net/jpg/04/14/02/09/360_F_414020916_hrbXZVSgF6NbinmQs1CrZTVTRlDEyeqV.jpg" alt="Inspiring Fitness Image"/> -->
+      </section>
+      <!DOCTYPE html>
+      <html lang="en">
+      
+      
+      
+      
+
+        <!-- added log below -->
+<!-- activity log banner -->
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Activity Log</title>
+          <style>
+          
+            header {
+              background-color: #3C3C3C;
+              color: #fff;
+              text-align: center;
+              padding: 1rem;
+            }
+
+          
+  /* table color and measurments */
+            .container {
+              max-width: 800px;
+              margin: 2rem auto;
+              padding: 2rem;
+              background-color: #fff;
+              box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+              border-radius: 5px;
+            }
+
+            table {
+              width: 100%;
+              border-collapse: collapse;
+            }
+
+            th,
+            td {
+              padding: 0.5rem;
+              text-align: left;
+              border-bottom: 1px solid #ddd;
+            }
+
+            th {
+              background-color: #3C3C3C;
+              color: #fff;
+            }
+
+          </style>
+        </head>
+
+        
+        <!-- table variables that you can add values to -->
+        <body>
+          <header>
+            <h1>Activity Log</h1>
+          </header>
+          <div class="container">
+            <table>
+              <tr>
+                <th>Training</th> 
+                <th>Day 1</th>
+                <th>Day 2</th>
+                <th>Day 3</th>
+                <th>Day 4</th>
+                <th>Day 5</th>
+                <th>Rest</th>
+              </tr>
+              <tr>
+                <td>Workout 1</td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+              </tr>
+              <tr>
+                <td>Workout 2</td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+              </tr>
+              <tr>
+                <td>Workout 3</td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+              </tr>
+              <tr>
+                <td>Workout 4</td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+              </tr>
+              <tr>
+                <td>Workout 5</td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+              </tr>
+              <tr>
+             </tr>
+           </table>
+         </div>
+       </body>
+
+     </html>
+
+   </main>
+ </body>
+
+</html>
